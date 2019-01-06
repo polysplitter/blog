@@ -16,5 +16,13 @@ app.get('/', (req, res, next) => {
   res.render('home', { paragraph:homeStartingContent })
 })
 
+app.get('/about', (req, res, next) => {
+  res.render('about', { paragraph:aboutContent })
+})
+
+app.get('/contact', (req, res, next) => {
+  res.render('contact', { paragraph:contactContent })
+})
+
 
 module.exports = app
