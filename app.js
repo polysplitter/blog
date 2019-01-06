@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended:true }))
 app.use(express.static("public"));
 
 app.get('/', (req, res, next) => {
-  res.render('home')
+  res.render('home', { paragraph:homeStartingContent })
 })
 
 
