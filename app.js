@@ -24,5 +24,16 @@ app.get('/contact', (req, res, next) => {
   res.render('contact', { paragraph:contactContent })
 })
 
+app.get('/compose', (req, res, next) => {
+  res.render('compose')
+})
+
+// post from the compose submit button.
+app.post('/compose', (req, res, next) => {
+  console.log(req.body.title)
+  console.log(req.body.message)
+  res.redirect('/')
+})
+
 
 module.exports = app
