@@ -15,8 +15,7 @@ app.use(express.urlencoded({ extended:true }))
 app.use(express.static("public"));
 
 app.get('/', (req, res, next) => {
-  console.log(posts)
-  res.render('home', { paragraph:homeStartingContent })
+  res.render('home', { paragraph:homeStartingContent, blogPosts:posts })
 })
 
 app.get('/about', (req, res, next) => {
