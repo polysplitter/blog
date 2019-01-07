@@ -4,8 +4,9 @@
 <p><%= paragraph%></p>
 
 <% posts.forEach( post => { %>
-    <h1><a href='/posts/<%= post.title%>'><%= post.title %></a></h1>
+    <h1><%= post.title %></h1>
     <p class='clipText'><%= post.content %></p>
+    <a href='/posts/<%= post.title%>'>Read More</a>
 <% }) %>
 
 <%- include('partials/footer') -%>
