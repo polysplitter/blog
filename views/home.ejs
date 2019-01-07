@@ -3,9 +3,9 @@
 <h1>Home</h1>
 <p><%= paragraph%></p>
 
-<% blogPosts.forEach( post => { %>
-    <label><%= post.title %></label>
-    <p><%= post.content %></p>
+<% posts.forEach( post => { %>
+    <h1><a href='/posts/<%= post.title%>'><%= post.title %></a></h1>
+    <p class='clipText'><%= post.content %></p>
 <% }) %>
 
 <%- include('partials/footer') -%>

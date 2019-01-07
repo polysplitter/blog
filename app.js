@@ -15,7 +15,10 @@ app.use(express.urlencoded({ extended:true }))
 app.use(express.static("public"));
 
 app.get('/', (req, res, next) => {
-  res.render('home', { paragraph:homeStartingContent, blogPosts:posts })
+  res.render('home', { 
+    paragraph: homeStartingContent, 
+    posts: posts 
+  })
 })
 
 app.get('/about', (req, res, next) => {
@@ -41,5 +44,9 @@ app.post('/compose', (req, res, next) => {
   res.redirect('/')
 })
 
+app.get('/posts/:postName', (req, res, next) => {
+  const obj = posts.find(o => o.title === req.params.postName)
+  res.render('post', { post: obj})
+})
 
 module.exports = app
